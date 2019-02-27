@@ -64,10 +64,17 @@
         // capturing and at target
         rect.addEventListener('click', function (event) {
             console.log('1:', event.eventPhase, event.currentTarget, event.target);
+            // event.stopPropagation();
+            // 停止事件
+
+            // event.preventDefault()
+
+
         }, true); // useCapture
         // ADDEVENTLISTENER有三個參數，如果第三個下TRUE則會反過來看
         bigBall.addEventListener('click', function (event) {
             console.log('2:', event.eventPhase, event.currentTarget, event.target);
+            event.stopPropagation();
         }, true);
         ball.addEventListener('click', function (event) {
             console.log('3:', event.eventPhase, event.currentTarget, event.target);
